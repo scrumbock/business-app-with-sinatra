@@ -1,5 +1,28 @@
 body {
-  background-color: teal;
-  font-family: helvetica; }
+  background-color: #F5F5F5;
+  font-family: 'Raleway', sans-serif;
+  color: grey; }
+
+ul {
+  list-style-type: none; }
+
+header {
+  display: flex; }
+
+.nav-bar {
+  display: flex;
+  flex-grow: 1;
+  font-size: 22px; }
+
+.main-h {
+  font-family: 'Raleway', sans-serif;
+  font-size: 50px;
+  color: grey;
+  flex-grow: 2; }
+
+footer {
+  display: flex;
+  text-align: center;
+  margin-bottom: 0px; }
 
 /*# sourceMappingURL=styles.css.map */
