@@ -10,23 +10,23 @@
 		<header>
 		<nav class="nav-bar">
 			<ul>
-				<li>Home</li>
-				<li>Gallery</li>
-				<li>Contact</li>
-				<li>About</li>
+				<a class="active" href='/'><li>Home</li></a>
+				<a href='/gallery'><li>Gallery</li></a>
+				<a href='/about'><li>About</li></a>
+				<a href='/contact'><li>Contact</li></a>
 			</ul>
 		</nav>
 
-
+		<div class="main-title">
 		<h1 class="main-h">LensCape: Cape Cod in Pictures</h1>
+	  </div>
 
-		<h4>Photography by Bryan Monzella</h4>
+		<div class="bryan-tag">
+			<h2>Photography by Bryan Monzella</h2>
+		</div>
 	</header>
-		
-	<div class="main-container"><%= yield %></div>
-		
-	
 
+	<div class="main-container"><%= yield %></div>
 
 		<footer>
 			<p>Copyright 2017 Monzella Enterprises</p>

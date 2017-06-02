@@ -17,17 +17,11 @@ puts response.headers
 
 get '/' do
 	@message = "Hello, this is a variable created in the default route."
-	@names = ['DOris', 'Janet', "Pavo"]
 	erb :index
 end
 
-get '/contacts' do
-erb :contacts
-end
-
-
-get '/index' do
-	erb :index
+get '/contact' do
+erb :contact
 end
 
 get '/layout' do
@@ -63,3 +57,6 @@ end
 # Mail sends with no errors
 # Complete = Meets above grading criteria.
 # Incomplete = Does not meet grading criteria. Needs improvement or missing submission.
+
+
+
