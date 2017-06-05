@@ -1,0 +1,42 @@
+.gallery-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.gallery-container div {
+	margin: 10px auto;
+	height: 300px;
+	width: 300px;
+	border: 2px solid grey;
+	background-size: 100%;
+}
+
+.one {
+	background-image: url("/images/one.JPG");
+}
+
+ .two {
+	 background-image: url("/images/two.JPG");
+ }
+
+ .three {
+	background-image: url("/images/three.JPG");
+ }
+
+ .four {
+	background-image: url("/images/four.JPG");
+ }
+
+ .five {
+	background-image: url("/images/five.JPG");
+ }
+ .six {
+	background-image: url("/images/six.JPG");
+ }
+ .seven {
+	background-image: url("/images/seven.JPG");
+ }
+ .eight {
+	background-image: url("/images/eight.JPG");
+ }

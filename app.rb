@@ -3,8 +3,6 @@ require 'sendgrid-ruby'
 include SendGrid
 
 
-
-
 get '/' do
 	@message = "Hello, this is a variable created in the default route."
 	erb :index
