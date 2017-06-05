@@ -2,17 +2,7 @@ require 'sinatra'
 require 'sendgrid-ruby'
 include SendGrid
 
-from = Email.new(email: 'test@example.com')
-to = Email.new(email: 'test@example.com')
-subject = 'Sending with SendGrid is Fun'
-content = Content.new(type: 'text/plain', value: 'and easy to do anywhere, even with Ruby')
-mail = Mail.new(from, subject, to, content)
 
-sg = SendGrid::API.new(api_key: ENV['SENDGRID_API_KEY'])
-response = sg.client.mail._('send').post(request_body: mail.to_json)
-puts response.status_code
-puts response.body
-puts response.headers
 
 
 get '/' do
@@ -22,6 +12,27 @@ end
 
 get '/contact' do
 erb :contact
+end
+
+post '/contact' do
+	@name = params[:email]
+	@subject = params[:subject]
+	@text = params[:text]
+
+
+	from = Email.new(email: @name)
+	to = Email.new(email: 'scrumboc@yahoo.com')
+	subject = @subject
+	content = Content.new(type: 'text/plain', value: @text)
+	mail = Mail.new(from, subject, to, content)
+
+	sg = SendGrid::API.new(api_key: ENV['SENDGRID_API_KEY'])
+	response = sg.client.mail._('send').post(request_body: mail.to_json)
+	puts response.status_code
+	puts response.body
+	puts response.headers
+	p @name
+	redirect '/'
 end
 
 get '/layout' do
@@ -46,7 +57,7 @@ end
 # At least 3 separate pages
 # Use photographs
 # Use SASS.
-# Do not use Bootstrap or any other front end framework or JavaScript plugins. All code must be written by hand. 
+# Do not use Bootstrap or any other front end framework or JavaScript plugins. All code must be written by hand.
 # There must be at least 5 commits on the remote Master branch by the time the project is complete.
 # Should have the option to contact the business using the SendGrid (or Mandrill) API to send an e-mail to the business owner (wait until we go over this in class to implement it).
 # Feel free to get incredibly creative!
@@ -57,6 +68,3 @@ end
 # Mail sends with no errors
 # Complete = Meets above grading criteria.
 # Incomplete = Does not meet grading criteria. Needs improvement or missing submission.
-
-
-
